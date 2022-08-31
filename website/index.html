@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Docker</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+<script>
+function ajaxCall() {
+    var url = document.location.protocol + "//" + document.location.hostname + ":5000";
+    var api = url + "/api/contact/person/"
+    console.log(api);
+    $.ajax({
+        url: api,
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            //var x = JSON.stringify(data);
+            console.log(data);
+        },
+        error: function (error) {
+            console.log(`Error ${error}`);
+        }
+    });
+}
+ajaxCall();
+</script>
+</head>
+<body>
+    <h1>Testing Docker</h1>
+    <h2>with nginx</h2>
+    <h3>data</h3>
+</body>
+</html>
